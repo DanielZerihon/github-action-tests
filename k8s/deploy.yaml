@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tota
+  labels:
+    app: tota
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tota
+  template:
+    metadata:
+      labels:
+        app: tota
+    spec:
+      containers:
+        - name: tota
+          image: 510491242343.dkr.ecr.us-east-1.amazonaws.com/bombo-086:9
+          imagePullPolicy: Always
